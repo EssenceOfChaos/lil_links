@@ -1,19 +1,13 @@
 # LilLinks
 
-To start your Phoenix server:
+LilLinks is a blazing fast URL shortening service. It's written in Elixir with availability, scalability, and performance in mind. Progress is still ongoing with plans to add additional features to shortened links such as:
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server`
+- expiration dates
+- password protection
+- high volume resiliency
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+Feel free to request a feature or submit a pull request.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+Example POST request:
 
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+![Insomnia screenshot](https://github.com/essenceofchaos/lil_links/screenshots/example-post-req.png 'Example POST request')

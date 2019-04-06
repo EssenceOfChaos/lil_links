@@ -10,34 +10,20 @@ defmodule LilLinks.Links do
 
   @doc """
   Returns the list of links.
-
-  ## Examples
-
-      iex> list_link()
-      [%Link{}, ...]
-
   """
-  def list_link do
+  def list_links do
     Repo.all(Link)
   end
 
   @doc """
   Gets a single link.
-
   Raises `Ecto.NoResultsError` if the Link does not exist.
-
-  ## Examples
-
-      iex> get_link!(123)
-      %Link{}
-
-      iex> get_link!(456)
-      ** (Ecto.NoResultsError)
-
   """
   def get_link!(id), do: Repo.get!(Link, id)
 
-  ## Given a hash, get the original url
+  @doc """
+  Given a hash, return the original url
+  """
   def get_original_link(hash) do
     query =
       from l in "links",
@@ -65,7 +51,9 @@ defmodule LilLinks.Links do
     |> Repo.update()
   end
 
-  ## Create a new link in db
+  @doc """
+  Create a new link in the db
+  """
   def create_link(attrs \\ %{}) do
     # Get the title of the site to save with the link
     title = fetch_title(attrs["url"])
@@ -76,16 +64,7 @@ defmodule LilLinks.Links do
   end
 
   @doc """
-  Updates a link.
-
-  ## Examples
-
-      iex> update_link(link, %{field: new_value})
-      {:ok, %Link{}}
-
-      iex> update_link(link, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
+  Updates a link
   """
   def update_link(%Link{} = link, attrs) do
     link
@@ -95,15 +74,6 @@ defmodule LilLinks.Links do
 
   @doc """
   Deletes a Link.
-
-  ## Examples
-
-      iex> delete_link(link)
-      {:ok, %Link{}}
-
-      iex> delete_link(link)
-      {:error, %Ecto.Changeset{}}
-
   """
   def delete_link(%Link{} = link) do
     Repo.delete(link)
@@ -122,7 +92,7 @@ defmodule LilLinks.Links do
     Link.changeset(link, %{})
   end
 
-  ## Private
+  ## Private ##
   defp fetch_title(site) do
     case HTTPoison.get(site) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->

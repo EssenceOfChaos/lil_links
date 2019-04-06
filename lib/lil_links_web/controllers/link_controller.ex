@@ -7,7 +7,7 @@ defmodule LilLinksWeb.LinkController do
   action_fallback LilLinksWeb.FallbackController
 
   def index(conn, _params) do
-    link = Links.list_link()
+    link = Links.list_links()
     render(conn, "index.json", link: link)
   end
 
