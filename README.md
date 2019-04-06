@@ -10,4 +10,4 @@ Feel free to request a feature or submit a pull request.
 
 Example POST request:
 
-![Insomnia screenshot](https://github.com/essenceofchaos/lil_links/assets/screenshots/example-post-req.png 'Example POST request')
+![Insomnia screenshot](https://github.com/EssenceOfChaos/lil_links/blob/master/assets/screenshots/example-post-req.png 'Example POST request')
