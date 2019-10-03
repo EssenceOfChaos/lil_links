@@ -1,4 +1,7 @@
 defmodule LilLinks.MixProject do
+  @moduledoc """
+  Application entry point and dependency list.
+  """
   use Mix.Project
 
   def project do
